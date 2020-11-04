@@ -1,0 +1,62 @@
+# Game
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoot 'em up!</title>
+    <style>
+        *{
+            cursor: crosshair;;
+        }
+        #mug{
+            position: fixed;
+        }
+        #space{
+           font-size: 32px;
+        }
+        h1{
+            font-size: 43px;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+<body  onload="init()">
+    <h1>Shoot Him !</h1>
+    
+  
+   <p id="space"></p>
+   <canvas id="canvas" width="150" height="150"></canvas>
+   <img id="mug" src="https://i.pinimg.com/originals/a6/8c/24/a68c24e6b68a931a8b17068c7689fb32.jpg" data-noaft="1" jsname="HiaYvf" jsaction="load:XAeZkd;" style="width: 162.124px; height: 193px; margin: 0px;">
+    <script>
+        function init(){
+            picture = document.getElementById("mug");
+            spaceW = screen.height - picture.height;
+            spaceH = screen.width - picture.width;
+       
+            setInterval(moveit,1000);
+            
+        }
+        function moveit(){
+            picture.style.top = Math.round(Math.random()*spaceW) + "px";
+            picture.style.left = Math.round(Math.random()*spaceH) + "px";
+        }
+        let score = 0;
+        var val = document.getElementById("space");
+    
+
+        var pic = document.getElementById("mug");
+        pic.addEventListener("click",sup)
+        function sup(){
+        score = score + 1;
+        val.innerHTML = "score :"+ score;
+        
+        }
+       
+     
+ 
+ 
+    </script>
+</body>
+</html>
